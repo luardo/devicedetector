@@ -1,0 +1,24 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: test-app
+    environment:
+      - PHP_IDE_CONFIG=serverName=local-env
+    volumes:
+      - "./public:/var/www/html/public"
+      - "./src:/var/www/html/src"
+      - "./tests:/var/www/html/tests"
+      - "./vendor:/var/www/html/vendor"
+      - "./composer.json:/var/www/html/composer.json"
+      - "./composer.lock:/var/www/html/composer.lock"
+    hostname: ${SERVER_NAME}
+  nginx:
+    image: nginx:1.15.12
+    container_name: test-nginx
+    volumes:
+      - ".docker/etc/nginx/sites-enabled:/etc/nginx/conf.d"
+      - "./public:/var/www/html/public"
+    command: /bin/sh -c 'nginx "-g" "daemon off;"'
+    ports:
+      - 8080:80

@@ -1,0 +1,10 @@
+# Ini files
+*.ini text
+
+# # Shell scripts require LF
+*.sh    text eol=lf
+
+# Batch and CMD scripts require CRLF
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   test eol=crlf

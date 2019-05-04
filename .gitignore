@@ -1,0 +1,8 @@
+/.idea/*
+
+# Cache and logs
+/vendor/
+/tmp
+/test/codeCoverage/
+*.iml
+/logs/*
