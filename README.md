@@ -23,7 +23,7 @@ Method: PUT or PATCH, Uri: ads/:id
 
 `docker-compose up -d`
 
-The app should be accessible under `localhost`
+The app should be accessible under `localhost:3000`
 
 ## Contributing
 
