@@ -16,7 +16,8 @@ FROM
 campaigns
 WHERE
 advertiserId = 100)
-HAVING count(_) >= 50;```
+HAVING count(_) >= 50;
+```
 
 showing all campaigns that do not have any ads
 
@@ -24,7 +25,8 @@ showing all campaigns that do not have any ads
 campaign
 WHERE NOT EXIST (
 SELECT adsCampaignId FROM ads WHERE id = adsCampaignId
-);```
+);
+```
 
 ##API answer:
 
