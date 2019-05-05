@@ -3,6 +3,29 @@
 Ths is a test app in php to detect devices
 it is build with Slim Framework to return a json response with the device and OS of the user
 
+##MySQL
+showing all campaigns of advertiser #100 that have more than 50 ads
+
+````
+SELECT  title, text, image, sponsoredBy, trackingUrl , count(_)
+From ads
+WHERE
+campaignId IN (SELECT
+id
+FROM
+campaigns
+WHERE
+advertiserId = 100)
+HAVING count(_) >= 50;```
+
+showing all campaigns that do not have any ads
+
+```SELECT id FROM
+campaign
+WHERE NOT EXIST (
+SELECT adsCampaignId FROM ads WHERE id = adsCampaignId
+);```
+
 ##API answer:
 
 ###selecting a specific ad
@@ -30,3 +53,4 @@ The app should be accessible under `localhost:3000`
 ## Versioning
 
 ## License
+````
