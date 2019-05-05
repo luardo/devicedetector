@@ -28,20 +28,21 @@ SELECT adsCampaignId FROM ads WHERE id = adsCampaignId
 );
 ```
 
-##API answer:
+## API answer:
 
-###selecting a specific ad
+### selecting a specific ad
 Method: GET, Uri: /ads/:id
 
-###selecting all ads of a specific campaign
+### selecting all ads of a specific campaign
 Method: GET, Uri: /campaigns/:id/ads/
 
-###selecting all ads of a specific advertiser
+### selecting all ads of a specific advertiser
 Method: GET, Uri: /advertisers/:id/ads/
-###creating an ad
+
+### creating an ad
 Method: POST, Uri: /ads
 
-###modifying a specific ad
+### modifying a specific ad
 Method: PUT or PATCH, Uri: ads/:id
 
 ## How to run locally
