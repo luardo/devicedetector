@@ -6,7 +6,7 @@ it is build with Slim Framework to return a json response with the device and OS
 ##MySQL
 showing all campaigns of advertiser #100 that have more than 50 ads
 
-````
+```
 SELECT  title, text, image, sponsoredBy, trackingUrl , count(_)
 From ads
 WHERE
