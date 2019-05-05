@@ -16,8 +16,6 @@ class App extends React.Component {
     };
   }
 
-  componentWillMount() {}
-
   getDevice() {
     return this.service.getDevice();
   }
