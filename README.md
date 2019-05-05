@@ -1,9 +1,11 @@
 # Test App
 
-Ths is a test app in php to detect devices
-it is build with Slim Framework to return a json response with the device and OS of the user
+This is a test app using php and react to detect user device.
+the backend is build with Slim Framework to return a json response.
+The client is a simple react app which connects to the api to get the device response.
 
-##MySQL
+## MySQL
+
 showing all campaigns of advertiser #100 that have more than 50 ads
 
 ````
