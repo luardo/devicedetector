@@ -8,7 +8,7 @@ The client is a simple react app which connects to the api to get the device res
 
 Showing all campaigns of advertiser #100 that have more than 50 ads
 
-````
+```
 SELECT  title, text, image, sponsoredBy, trackingUrl , count(_)
 From ads
 WHERE
@@ -30,20 +30,21 @@ SELECT adsCampaignId FROM ads WHERE id = adsCampaignId
 );
 ```
 
-##API answer:
+## API answer:
 
-###selecting a specific ad
+### selecting a specific ad
 Method: GET, Uri: /ads/:id
 
-###selecting all ads of a specific campaign
+### selecting all ads of a specific campaign
 Method: GET, Uri: /campaigns/:id/ads/
 
-###selecting all ads of a specific advertiser
+### selecting all ads of a specific advertiser
 Method: GET, Uri: /advertisers/:id/ads/
-###creating an ad
+
+### creating an ad
 Method: POST, Uri: /ads
 
-###modifying a specific ad
+### modifying a specific ad
 Method: PUT or PATCH, Uri: ads/:id
 
 ## How to run locally
