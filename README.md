@@ -9,7 +9,7 @@ The client is a simple react app which connects to the api to get the device res
 Showing all campaigns of advertiser #100 that have more than 50 ads
 
 ```
-SELECT  title, text, image, sponsoredBy, trackingUrl , count(_)
+SELECT  title, text, image, sponsoredBy, trackingUrl , count(*)
 From ads
 WHERE
 campaignId IN (SELECT
@@ -18,7 +18,7 @@ FROM
 campaigns
 WHERE
 advertiserId = 100)
-HAVING count(_) >= 50;
+HAVING count(*) >= 50;
 ```
 
 showing all campaigns that do not have any ads
