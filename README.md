@@ -68,7 +68,10 @@ To run the client, go to the client folder
 `cd client/`
 `docker-compose up -d --build`
 
-The react app should be accessible under `localhost:3000`
+Add `test-app.loc` to your /etc/hosts file
+`your.docker.ip.address test-app.loc`
+
+The react app should be accessible under `test-app.loc:3000`
 
 ## Contributing
 

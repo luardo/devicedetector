@@ -2,7 +2,8 @@ import axios from "axios";
 
 class Service {
   constructor() {
-    this.baseUri = "http://192.168.99.100:8080/";
+    this.apiPort = "8080";
+    this.baseUri = "http://test-app.loc:" + this.apiPort;
     this.endpoints = {
       detectDevice: "detect"
     };
