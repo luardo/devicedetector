@@ -28,7 +28,8 @@ HAVING
 
 showing all campaigns that do not have any ads
 
-```SELECT id FROM
+```
+SELECT id FROM
 campaign
 WHERE NOT EXIST (
 SELECT adsCampaignId FROM ads WHERE id = adsCampaignId
