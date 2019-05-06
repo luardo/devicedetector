@@ -5,7 +5,12 @@ use Slim\Http\Request;
 use Slim\Http\Response;
 
 $app->get('/detect', function (Request $request, Response $response) {
-    return (new DetectController(new Service()))->index($request, $response);
+
+    return (
+        new DetectController(
+            new Service(new Mobile_Detect())
+        )
+        )->index($request, $response);
 });
 
 $app->any('/[{path:.*}]', function (Request $request, Response $response) {

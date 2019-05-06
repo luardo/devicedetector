@@ -22,15 +22,3 @@ services:
     command: /bin/sh -c 'nginx "-g" "daemon off;"'
     ports:
       - 8080:80
-  client:
-    container_name: test-app-client
-    image: test-client
-    build:
-      context: ./client
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./client:/client
-      - /client/node_modules

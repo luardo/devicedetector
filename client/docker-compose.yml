@@ -1,0 +1,14 @@
+version: "3"
+services:
+  client:
+    container_name: test-app-client
+    image: test-client
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/client
+      - /client/node_modules

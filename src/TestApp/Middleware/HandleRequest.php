@@ -19,11 +19,6 @@ class HandleRequest
      */
     public function __invoke(Request $request, Response $response, \Slim\App $next) : Response
     {
-        
-      /*  if (self::ACCEPTED_CONTENT_TYPE !== strtolower($request->getContentType())) {
-            return $response->withJson(['error' => 'Content-Type not supported: ' . $request->getContentType()], 422);
-        }*/
-
         $response = $next($request, $response);
         $response = $response->withHeader('Access-Control-Allow-Origin', '*');
         $response = $response->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization');

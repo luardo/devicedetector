@@ -9,7 +9,7 @@ The client is a simple react app which connects to the api to get the device res
 Showing all campaigns of advertiser #100 that have more than 50 ads
 
 ```
-SELECT  title, text, image, sponsoredBy, trackingUrl , count(_)
+SELECT  title, text, image, sponsoredBy, trackingUrl , count(*)
 From ads
 WHERE
 campaignId IN (SELECT
@@ -18,7 +18,7 @@ FROM
 campaigns
 WHERE
 advertiserId = 100)
-HAVING count(_) >= 50;
+HAVING count(*) >= 50;
 ```
 
 showing all campaigns that do not have any ads
@@ -33,29 +33,43 @@ SELECT adsCampaignId FROM ads WHERE id = adsCampaignId
 ## API answer:
 
 ### selecting a specific ad
+
 Method: GET, Uri: /ads/:id
 
 ### selecting all ads of a specific campaign
+
 Method: GET, Uri: /campaigns/:id/ads/
 
 ### selecting all ads of a specific advertiser
+
 Method: GET, Uri: /advertisers/:id/ads/
 
 ### creating an ad
+
 Method: POST, Uri: /ads
 
 ### modifying a specific ad
+
 Method: PUT or PATCH, Uri: ads/:id
 
 ## How to run locally
 
+To run the backend, in the root folder run:
 `docker-compose up -d`
+The php app should be accessible under `localhost:8080`
 
-The app should be accessible under `localhost:3000`
+To run the client, go to the client folder
+`cd client/`
+`docker-compose up -d --build`
+
+The react app should be accessible under `localhost:3000`
 
 ## Contributing
 
 ## Versioning
 
 ## License
-````
+
+```
+
+```
